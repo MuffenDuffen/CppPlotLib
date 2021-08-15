@@ -17,14 +17,6 @@ int main()
 		exit(EXIT_FAILURE);
 	}
 	#pragma endregion 
-	
-	sf::Text text0;
-	text0.setString("LOL");
-	text0.setFillColor(sf::Color(0, 255, 0));
-	text0.setFont(font);
-	text0.setCharacterSize(48);
-
-	std::vector texts { text0 };
 
 	while (window.isOpen())
 	{
@@ -35,59 +27,59 @@ int main()
 		{
 			switch (event.type)
 			{
-			case sf::Event::Closed:
-				window.close();
-				break;
-			case sf::Event::Resized:
-			{
-				sf::FloatRect visibleArea(0, 0, (event.size.width), (event.size.height));
-				window.setView(sf::View(visibleArea));
+				case sf::Event::Closed:
+					window.close();
 					break;
-			}
-			case sf::Event::LostFocus: 
-				break;
-			case sf::Event::GainedFocus: 
-				break;
-			case sf::Event::TextEntered: 
-				break;
-			case sf::Event::KeyPressed:
-				break;
-			case sf::Event::KeyReleased:
-				break;
-			case sf::Event::MouseWheelMoved: 
-				break;
-			case sf::Event::MouseWheelScrolled: 
-				break;
-			case sf::Event::MouseButtonPressed:
-				break;
-			case sf::Event::MouseButtonReleased:
-				break;
-			case sf::Event::MouseMoved: 
-				break;
-			case sf::Event::MouseEntered: 
-				break;
-			case sf::Event::MouseLeft: 
-				break;
-			case sf::Event::JoystickButtonPressed: 
-				break;
-			case sf::Event::JoystickButtonReleased: 
-				break;
-			case sf::Event::JoystickMoved: 
-				break;
-			case sf::Event::JoystickConnected: 
-				break;
-			case sf::Event::JoystickDisconnected: 
-				break;
-			case sf::Event::TouchBegan: 
-				break;
-			case sf::Event::TouchMoved: 
-				break;
-			case sf::Event::TouchEnded: 
-				break;
-			case sf::Event::SensorChanged: 
-				break;
-			case sf::Event::Count: 
-				break;
+				case sf::Event::Resized:
+				{
+					sf::FloatRect visibleArea(0, 0, (event.size.width), (event.size.height));
+					window.setView(sf::View(visibleArea));
+						break;
+				}
+				case sf::Event::LostFocus: 
+					break;
+				case sf::Event::GainedFocus: 
+					break;
+				case sf::Event::TextEntered: 
+					break;
+				case sf::Event::KeyPressed:
+					break;
+				case sf::Event::KeyReleased:
+					break;
+				case sf::Event::MouseWheelMoved: 
+					break;
+				case sf::Event::MouseWheelScrolled: 
+					break;
+				case sf::Event::MouseButtonPressed:
+					break;
+				case sf::Event::MouseButtonReleased:
+					break;
+				case sf::Event::MouseMoved: 
+					break;
+				case sf::Event::MouseEntered: 
+					break;
+				case sf::Event::MouseLeft: 
+					break;
+				case sf::Event::JoystickButtonPressed: 
+					break;
+				case sf::Event::JoystickButtonReleased: 
+					break;
+				case sf::Event::JoystickMoved: 
+					break;
+				case sf::Event::JoystickConnected: 
+					break;
+				case sf::Event::JoystickDisconnected: 
+					break;
+				case sf::Event::TouchBegan: 
+					break;
+				case sf::Event::TouchMoved: 
+					break;
+				case sf::Event::TouchEnded: 
+					break;
+				case sf::Event::SensorChanged: 
+					break;
+				case sf::Event::Count: 
+					break;
 			}
 		}
 
@@ -100,8 +92,6 @@ int main()
 		#pragma region Rendering
 
 		window.clear(windowColor);
-
-		for (const auto& text : texts) window.draw(text);
 		
 		window.display();
 		

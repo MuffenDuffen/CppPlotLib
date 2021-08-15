@@ -24,6 +24,7 @@
     <ProjectGuid>{1af5132d-46e5-445c-b1b6-273aaf24a992}</ProjectGuid>
     <RootNamespace>VIDAL</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>CppPlotLibZ</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
