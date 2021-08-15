@@ -22,14 +22,14 @@ namespace CppP
 		sf::RenderWindow window;
 		auto windowColor = sf::Color(255, 255, 255, 255);
 
-		window.create(sf::VideoMode(800, 600), "Test Window");
+		sf::VideoMode lul = sf::VideoMode(800, 600);
+
+		window.create(lul, "Test Window");
 		window.setFramerateLimit(60);
 
 		sf::RectangleShape rS;
 
 		rS.setSize(sf::Vector2f(750, 550));
-
-		rS.setPosition()
 		rS.setFillColor(sf::Color(0, 0, 0));
 
 #pragma region Font loading
