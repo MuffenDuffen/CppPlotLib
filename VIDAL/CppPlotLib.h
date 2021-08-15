@@ -7,43 +7,64 @@
 
 namespace CppP
 {
-    struct dataStruct
+    struct DataStruct
     {
-        std::string title;
+        std::string Title;
 
-        std::string titleXAxis;
-        std::string titleYAxis;
+        std::string TitleXAxis;
+        std::string TitleYAxis;
 
-        std::vector<unsigned long long> nums = {};
+        std::vector<unsigned long long> Nums = {};
 
+		DataStruct(std::vector<unsigned long long>& nums, std::string title, std::string titleX, std::string titleY)
+		{
+			Nums = nums;
+			Title = title;
+			TitleXAxis = titleX;
+			TitleYAxis = titleY;
+		}
     };
-    void showWin()
+    void showWin(DataStruct data)
     {
 		sf::RenderWindow window;
 		auto windowColor = sf::Color(255, 255, 255, 255);
 
-		window.create(sf::VideoMode(800, 600), "Test Window");
+		window.create(sf::VideoMode(960, 540), "Test Window");
 		window.setFramerateLimit(60);
 
+    	// Rectangle
 		sf::RectangleShape rS;
-
-		rS.setSize(sf::Vector2f(750, 550));
-
-		rS.setPosition()
+    	rS.setPosition(sf::Vector2f(80, 45));
+		rS.setSize(sf::Vector2f(800, 450));
 		rS.setFillColor(sf::Color(0, 0, 0));
+    	sf::RectangleShape rS2;
+    	rS2.setPosition(sf::Vector2f(80, 45));
+    	rS2.setSize(sf::Vector2f(400, 450));
+    	rS2.setFillColor(sf::Color(0, 255, 0));
 
-#pragma region Font loading
+		#pragma region Font loading
 		sf::Font font;
 		if (!font.loadFromFile("JetBrainsMono-Medium.ttf"))
 		{
 			std::cout << "Failed to load font file\n";
 			exit(EXIT_FAILURE);
 		}
-#pragma endregion 
+		#pragma endregion
+
+    	// Texts
+    	sf::Text title, titleX, titleY;
+    	title.setString(data.Title);
+    	titleX.setString(data.TitleXAxis);
+    	titleY.setString(data.TitleYAxis);
+    	title.setFont(font);
+    	title.setFillColor(sf::Color(0, 0, 0));
+    	title.setPosition((window.getSize().x / 2) - title.getLocalBounds().width / 2, 10);
+
+    	
 
 		while (window.isOpen())
 		{
-#pragma region Events
+		#pragma region Events
 
 			sf::Event event{};
 			while (window.pollEvent(event))
@@ -55,8 +76,7 @@ namespace CppP
 					break;
 				case sf::Event::Resized:
 				{
-					sf::FloatRect visibleArea(0, 0, (event.size.width), (event.size.height));
-					window.setView(sf::View(visibleArea));
+					window.clear(windowColor);
 					break;
 				}
 				case sf::Event::LostFocus:
@@ -106,17 +126,18 @@ namespace CppP
 				}
 			}
 
-#pragma endregion
+		#pragma endregion
 
-#pragma region Changes
-
-#pragma endregion
-
-#pragma region Rendering
+		#pragma region Rendering
 
 			window.clear(windowColor);
 
 			window.draw(rS);
+			window.draw(rS2);
+
+			window.draw(title);
+			window.draw(titleX);
+			window.draw(titleY);
 
 			window.display();
 

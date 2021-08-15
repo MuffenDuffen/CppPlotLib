@@ -4,7 +4,9 @@
 
 int main()
 {
-	CppP::showWin();
+	std::vector<unsigned long long> numbers;
+	
+	CppP::showWin(CppP::DataStruct(numbers, "Test", "X", "Y"));
 	
 	return 0;
 }
