@@ -47,6 +47,16 @@ namespace CppP
 		/* Make the window's context current */
 		glfwMakeContextCurrent(window);
 
+		// Setup Dear ImGui context
+		IMGUI_CHECKVERSION();
+		ImGui::CreateContext();
+		ImGuiIO& io = ImGui::GetIO();
+		// Setup Platform/Renderer bindings
+		ImGui_ImplGlfw_InitForOpenGL(window, true);
+		ImGui_ImplOpenGL3_Init(glsl_version);
+		// Setup Dear ImGui style
+		ImGui::StyleColorsDark();
+
 		/* Loop until the user closes the window */
 		while (!glfwWindowShouldClose(window))
 		{
