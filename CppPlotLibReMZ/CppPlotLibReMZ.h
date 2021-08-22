@@ -17,13 +17,15 @@ namespace CppP
 		std::string WinName;
 		Int2 WinSize;
 
-		
+		int* Numbers;
+		int Length;
 
-		ChartData(std::string winName, const Int2& winSize)
+		ChartData(std::string winName, const Int2& winSize, void* numbers, const int length)
 		{
 			WinName = winName;
 			WinSize = winSize;
-
+			Numbers = static_cast<int*>(numbers);
+			Length = length;
 		}
 	};
 
