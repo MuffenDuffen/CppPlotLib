@@ -5,10 +5,10 @@
   <PropertyGroup />
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)CppPlotLibRemZ;$(SolutionDir)Libs\IMPLOT;$(SolutionDir)Libs\IMGUI;$(SolutionDir)Libs\GLFW3\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libs\IMPLOT;$(SolutionDir)Libs\IMGUI;$(SolutionDir)Libs\GLM;$(SolutionDir)Libs\GLFW3\include;$(SolutionDir)Libs\GLEW\include;$(SolutionDir)CppPlotLibReMZ</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)Libs\GLFW3\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Libs\GLEW\lib\Release\x64;$(SolutionDir)Libs\GLFW3\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

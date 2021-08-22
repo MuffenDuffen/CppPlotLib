@@ -3,10 +3,31 @@
 #include "GLFW/glfw3.h"
 #include "imgui.h"
 #include "implot.h"
+#include <string>
 
 namespace CppP
 {
-	inline int ShowWindow()
+	struct Int2
+	{
+		int X, Y;
+	};
+
+	struct ChartData
+	{
+		std::string WinName;
+		Int2 WinSize;
+
+		
+
+		ChartData(std::string winName, const Int2& winSize)
+		{
+			WinName = winName;
+			WinSize = winSize;
+
+		}
+	};
+
+	inline int ShowWindow(CppP::ChartData data)
 	{
 		GLFWwindow* window;
 
@@ -14,8 +35,10 @@ namespace CppP
 		if (!glfwInit())
 			return -1;
 
+		const char* str = data.WinName.c_str();
+
 		/* Create a windowed mode window and its OpenGL context */
-		window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+		window = glfwCreateWindow(data.WinSize.X, data.WinSize.Y, str, nullptr, nullptr);
 		if (!window)
 		{
 			glfwTerminate();
