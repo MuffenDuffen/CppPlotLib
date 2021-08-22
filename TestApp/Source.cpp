@@ -4,7 +4,7 @@
 
 int main()
 {
-	CppP::showWindow();
+	CppP::ShowWindow();
 
 	return 0;
 }
