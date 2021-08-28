@@ -4,11 +4,11 @@
 
 int main()
 {
-	int numbers[9] = { 1,2,3,4,5,4,3,2,1 };
+	std::vector<int> numbers = { 0,1,3,3,4,5,4,3,2,1 };
 
 	void* lol = &numbers;
 
-	const CppP::ChartData data("Test Window", CppP::Int2{ 960, 540 }, &numbers, 9);
+	const CppP::ChartData data("Test Window", CppP::Int2{ 960, 540 }, numbers);
 
 	CppP::ShowWindow(data);
 
