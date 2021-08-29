@@ -2,10 +2,6 @@
 
 #include "GLEW/glew.h"
 #include "GLFW/glfw3.h"
-//#include "imgui.h"
-//#include "implot.h"
-//#include "backends/imgui_impl_opengl3.h"
-//#include "backends/imgui_impl_glfw.h"
 #include <string>
 #include <vector>
 
